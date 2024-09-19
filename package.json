@@ -1,0 +1,19 @@
+{
+  "name": "discord-app.js",
+  "version": "1.0.0",
+  "description": "Discord app created in JavaScript.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --watch"
+  },
+  "keywords": [],
+  "author": "yuhjak25",
+  "github": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.16.2",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.5"
+  }
+}
