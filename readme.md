@@ -61,6 +61,7 @@
 
 `APP_TOKEN=your_discord_app_token`
 `APP_ID=your_discord_app_id`
+`MONGODB_URI=your_mongoDB_url`
 
 <h2>Contribution & Updates</h2>
 <p>As the project evolves with Discord's API and the Discord.js library, updates will be made. Contributions and feedback are welcome to keep the bot up-to-date and functional.</p>
