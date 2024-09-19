@@ -17,7 +17,7 @@ const {
 
 // Create a new Discord client instance with the necessary Gateway intents.
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds], // Adjust intents as needed for your bot.
+  intents: [GatewayIntentBits.Guilds], // Adjust intents as needed for your app.
 })
 
 // Register commands, buttons, modals, select menus, and events using the handlers.
@@ -27,7 +27,7 @@ modalHandler(client)
 selectMenuHandler(client)
 eventHandler(client)
 
-// Initialize the REST API client with the bot token to register commands with Discord's API.
+// Initialize the REST API client with the app token to register commands with Discord's API.
 const rest = new REST({ version: '10' }).setToken(token)
 
 // Register the commands asynchronously with Discord's API.
@@ -50,5 +50,5 @@ const rest = new REST({ version: '10' }).setToken(token)
   }
 })()
 
-// Log in to Discord using the provided bot token.
+// Log in to Discord using the provided app token.
 client.login(token)
