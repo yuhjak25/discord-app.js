@@ -2,6 +2,7 @@ const { Collection } = require('discord.js')
 const fs = require('node:fs')
 const path = require('node:path')
 
+//Function to handle the commands of your application commands.
 function commandHandler(client) {
   client.commands = new Collection()
   const commands = []
@@ -32,6 +33,7 @@ function commandHandler(client) {
   return commands
 }
 
+//Function to handle the events of your application commands.
 function eventHandler(client) {
   const eventsPath = path.join(__dirname, 'events')
   const eventFiles = fs
@@ -49,6 +51,7 @@ function eventHandler(client) {
   }
 }
 
+//Function to handle the components of your application commands (buttons, modals and select menus).
 function genericHandler(client, type, folderName) {
   client[type] = new Collection()
   const items = []
@@ -93,6 +96,7 @@ function selectMenuHandler(client) {
   genericHandler(client, 'selectMenus', 'selectMenus')
 }
 
+//Exporting the functions for use in your Discord index.js file.
 module.exports = {
   commandHandler,
   eventHandler,

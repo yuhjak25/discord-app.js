@@ -1,9 +1,11 @@
 const { Events } = require('discord.js')
 
+// Export a module to handle the 'InteractionCreate' event.
 module.exports = {
   name: Events.InteractionCreate,
+  // This function is triggered when an interaction occurs.
   async execute(interaction) {
-    // Manejo de comandos (Chat Input)
+    // If the interaction is a chat input command (slash command):
     if (interaction.isChatInputCommand()) {
       const command = interaction.client.commands.get(interaction.commandName)
 
@@ -14,6 +16,7 @@ module.exports = {
         return
       }
 
+      // Try to execute the command, and handle errors.
       try {
         await command.execute(interaction)
       } catch (error) {
@@ -30,10 +33,8 @@ module.exports = {
           })
         }
       }
-    }
-
-    // Manejo de botones
-    else if (interaction.isButton()) {
+      // Handle button interactions.
+    } else if (interaction.isButton()) {
       const button = interaction.client.buttons.get(interaction.customId)
 
       if (!button) {
@@ -41,6 +42,7 @@ module.exports = {
         return
       }
 
+      // Try to execute the button, and handle errors.
       try {
         await button.execute(interaction)
       } catch (error) {
@@ -57,10 +59,8 @@ module.exports = {
           })
         }
       }
-    }
-
-    // Manejo de modales
-    else if (interaction.isModalSubmit()) {
+      // Handle modal interactions.
+    } else if (interaction.isModalSubmit()) {
       const modal = interaction.client.modals.get(interaction.customId)
 
       if (!modal) {
@@ -68,6 +68,7 @@ module.exports = {
         return
       }
 
+      // Try to execute the modal, and handle errors.
       try {
         await modal.execute(interaction)
       } catch (error) {
@@ -84,10 +85,8 @@ module.exports = {
           })
         }
       }
-    }
-
-    // Manejo de menús de selección
-    else if (interaction.isSelectMenu()) {
+      // Handle selectMenus interactions.
+    } else if (interaction.isSelectMenu()) {
       const selectMenu = interaction.client.selectMenus.get(
         interaction.customId
       )
@@ -99,6 +98,7 @@ module.exports = {
         return
       }
 
+      // Try to execute the selectMenu, and handle errors.
       try {
         await selectMenu.execute(interaction)
       } catch (error) {
