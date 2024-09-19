@@ -22,6 +22,8 @@
 <li><strong>Dotenv</strong>: Loads environment variables from a <code>.env</code> file.</li>
  </ul>
 
+> Note: The project uses [Bun](https://bun.sh/) for faster performance, but it's compatible with other package managers as well.
+
 <h2>Installation</h2>
 <h3>Using Bun</h3>
 <p>If you're using Bun as your package manager, run the following command to install dependencies:</p>
