@@ -15,10 +15,16 @@ const {
   selectMenuHandler,
 } = require('./handler')
 
+//Import the connection to MongoDB
+const connectDB = require('./db/database')
+
 // Create a new Discord client instance with the necessary Gateway intents.
 const client = new Client({
   intents: [GatewayIntentBits.Guilds], // Adjust intents as needed for your app.
 })
+
+// Connect to the database of MongoDB
+connectDB()
 
 // Register commands, buttons, modals, select menus, and events using the handlers.
 const commands = commandHandler(client)
